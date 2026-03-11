@@ -1,54 +1,175 @@
-# LoLSpeak - Jarvis for League of Legends (v2.5)
+# 🧠 Jarbas — Assistente Tático para League of Legends
 
-Este projeto é um assistente tático avançado (Jarvis) para League of Legends, projetado para fornecer insights estratégicos em tempo real com base nos dados capturados diretamente do cliente do jogo.
+Jarbas é um assistente tático avançado (Jarvis) para League of Legends, projetado para fornecer insights estratégicos em tempo real e dialogar estratégias com o jogador durante a partida.
 
-## 🚀 Funcionalidades Principais
+## 📋 Visão Geral
 
-- **Monitoramento em Tempo Real**: O sistema monitora a API do League of Legends (`Live Client Data`) a cada 5 segundos para detectar o estado da partida.
-- **Análise Minuto a Minuto**: Sempre que um novo minuto se inicia, o Jarvis realiza uma análise profunda do estado atual do jogo.
-- **Sistema de Checkpoints**: A cada 5 minutos (ex: 5:00, 10:00, 15:00), o Jarvis salva um "checkpoint" para comparar sua evolução de Gold, Farm (CS) e Nível em relação ao estado anterior.
-- **Inteligência Artificial (Gemini 1.5/2.0+)**: Utiliza o motor do Google Gemini (via LangChain) para processar o histórico da partida e gerar orientações táticas agressivas e focadas no seu oponente direto de rota.
-- **Matchup Direto**: Identifica automaticamente quem é seu adversário de rota comparando as posições (Top, Jungle, Mid, etc.) e analisa os itens e níveis dele para sugerir comportamentos (agressivo, recuado, congelar rota).
-- **Feedback por Voz (TTS)**: Os insights são narrados automaticamente usando o sintetizador de voz do Windows, permitindo que você mantenha o foco total na tela.
-- **Filtragem Inteligente**: O Jarvis utiliza uma regra de "SILENCE" para evitar falar obviedades ou repetir instruções se nada relevante mudou na partida.
+O sistema monitora a **API Live Client Data** do League of Legends a cada **5 segundos**, capturando o estado completo da partida. Quando detecta **mudanças significativas**, consulta a IA (Google Gemini) para gerar insights táticos contextuais, que são exibidos no terminal e **falados em voz alta** usando o sintetizador de voz nativo do Windows.
 
 ## 🛠️ Tecnologias Utilizadas
 
-- **Node.js & TypeScript**: Core do sistema.
-- **LangChain & Google Gemini**: IA para análise de contexto estratégico.
-- **Axios**: Integração com a API local do LoL Client.
-- **PowerShell (System.Speech)**: Motor de sintetização de voz nativo do Windows.
+- **Node.js & TypeScript** — Core do sistema
+- **LangChain & Google Gemini 2.5 Flash** — IA para análise de contexto estratégico
+- **Axios** — Integração com a API local do LoL Client (`https://127.0.0.1:2999`)
+- **PowerShell (System.Speech)** — Motor de sintetização de voz nativo do Windows
+
+## 🎯 Dados Monitorados
+
+### Active Player
+| Propriedade | Descrição |
+|---|---|
+| `championStats` | Status do campeão: `currentHealth`, `maxHealth`, `resourceType`, `resourceValue`, `resourceMax` (mana condicional — só se `resourceType === "MANA"`) |
+| `currentGold` | Quantidade de ouro atual do campeão |
+| `fullRunes` | Runas selecionadas pelo campeão |
+| `riotId` | Identificador do jogador (usado para cruzar com `allPlayers`) |
+
+### All Players
+| Propriedade | Descrição |
+|---|---|
+| `championName` | Nome do campeão de cada jogador |
+| `isDead` | Se o campeão está vivo ou morto |
+| `items` | Itens do inventário (`price`, `displayName`) — indica força do campeão |
+| `level` | Nível atual do campeão |
+| `position` | Posição na partida: `TOP`, `JUNGLE`, `MIDDLE`, `BOTTOM`, `UTILITY` |
+| `runes` | Runas do jogador |
+| `scores` | KDA (`kills`, `deaths`, `assists`), `creepScore`, `wardScore` |
+| `team` | Time: `ORDER` (azul) ou `CHAOS` (vermelho) |
+
+### Events
+Eventos importantes: `ChampionKill`, `FirstBlood`, `DragonKill`, `BaronKill`, `HeraldKill`, `TurretKilled`, `InhibKilled`, `Multikill`.
+
+### Game Data
+| Propriedade | Descrição |
+|---|---|
+| `gameTime` | Tempo de jogo em segundos |
+| `gameMode` | Modo de jogo |
+
+## ⚙️ Fluxo de Funcionamento
+
+```
+┌─────────────────────────────────────────────────┐
+│              CICLO PRINCIPAL (5s)                │
+├─────────────────────────────────────────────────┤
+│                                                 │
+│  1. GET /allgamedata                            │
+│  2. Atualizar estado (snapshot)                 │
+│  3. Detectar mudanças significativas            │
+│  4. Verificar análise periódica (5 min)         │
+│                                                 │
+│  Se houve mudança:                              │
+│    ├── PAUSAR polling                           │
+│    ├── Chamar Gemini (insight reativo)          │
+│    ├── Verificar staleness (>30s = descartado)  │
+│    ├── Logar insight                            │
+│    ├── Falar insight (TTS)                      │
+│    └── RETOMAR polling                          │
+│                                                 │
+│  Se análise periódica devida (5 min):           │
+│    ├── Salvar snapshot no array periódico       │
+│    ├── Chamar Gemini (análise de tendência)     │
+│    ├── Logar e falar insight                    │
+│    └── RETOMAR polling                          │
+│                                                 │
+└─────────────────────────────────────────────────┘
+```
+
+### Mudanças Significativas Detectadas
+
+- **Novos eventos** — Abates, dragões, barões, torres, multikills, first blood
+- **Itens épicos** — Compra de itens com preço ≥ 2600g por qualquer jogador
+- **Mortes** — Quando qualquer campeão morre
+- **Score** — Mudanças no KDA do jogador ativo
+- **Level up** — Subida de nível do jogador ativo
+- **Gold spike** — Variação de ≥ 500g no ouro do jogador ativo
+
+### Análise Periódica (5 min)
+
+A cada 5 minutos de `gameTime`, o sistema salva um snapshot completo em um array duradouro e gera uma análise de tendência. Isso permite acompanhar a evolução da partida e saber se o jogador está com vantagem ou desvantagem.
+
+### Controle de Sobreposição e Staleness
+
+- Os insights **não se sobrepõem** — o polling é pausado durante o processamento da IA e TTS
+- Se um insight demorar para ser gerado e o `gameTime` avançar mais de **30 segundos**, ele é **descartado** para evitar informações desatualizadas
 
 ## 📁 Estrutura do Projeto
 
-- `src/index.ts`: Orquestrador principal que gerencia o loop de monitoramento e a conexão com o jogo.
-- `src/services/insight.service.ts`: O "cérebro" do Jarvis. Processa dados brutos em insights estratégicos.
-- `src/services/gamedata.service.ts`: Gerencia as chamadas à API do jogo (`https://127.0.0.1:2999`).
-- `src/services/speaker.service.ts`: Gerencia a fila de fala e a integração com o PowerShell.
-- `src/types/game.ts`: Definições de tipos para os dados do jogo e insights.
+```
+lolspeak/
+├── .env                        # Variáveis de ambiente (GOOGLE_API_KEY)
+├── .env.example                # Template das variáveis
+├── package.json
+├── tsconfig.json
+├── jarbas.log                  # Log dos insights (gerado em runtime)
+├── endpoints/                  # JSONs de exemplo dos endpoints da API
+│   ├── all-game-data.json
+│   ├── event-data.json
+│   ├── game-stats.json
+│   ├── player-list.json
+│   ├── player-data.json
+│   ├── active-player-abilities.json
+│   ├── active-player-name.json
+│   └── active-player-runes.json
+└── src/
+    ├── index.ts                # Entry point
+    ├── api/
+    │   └── client.ts           # Axios client para a API do LoL
+    ├── ai/
+    │   ├── geminiService.ts    # Integração LangChain + Gemini
+    │   └── prompts.ts          # System prompt e templates de prompt
+    ├── models/
+    │   └── types.ts            # Interfaces TypeScript
+    ├── monitor/
+    │   ├── gameMonitor.ts      # Loop de monitoramento principal
+    │   └── changeDetector.ts   # Lógica de detecção de mudanças
+    ├── speech/
+    │   └── speaker.ts          # TTS via PowerShell (System.Speech)
+    ├── state/
+    │   └── gameState.ts        # Gerenciamento de estado da partida
+    └── utils/
+        └── logger.ts           # Utilitário de logging
+```
 
-## ⚙️ Configuração e Requisitos
+## 🚀 Como Usar
 
-### Requisitos
-1. **Windows OS**: Necessário para o sistema de voz via PowerShell.
-2. **League of Legends**: O jogo deve estar em execução. A opção "Enable Live Client Data" deve estar ativa (padrão do jogo).
+### 1. Instalar dependências
 
-### Instalação
-1. Clone o repositório e instale as dependências:
-   ```bash
-   npm install
-   ```
-2. Crie um arquivo `.env` na raiz do projeto:
-   ```env
-   GOOGLE_API_KEY=sua_chave_gemini_aqui
-   ```
-3. Inicie o Jarvis:
-   ```bash
-   npm run dev
-   ```
+```bash
+npm install
+```
 
-## 🧠 Como o Jarvis pensa
-O Jarvis atua como um estrategista focado em:
-1. **Poder Relativo**: "Você está 2 níveis acima do Mid inimigo, force uma luta agora."
-2. **Itemização**: "Oponente fechou corta-cura, evite trocas longas."
-3. **Evolução**: Compara sua performance atual com o checkpoint de 5 minutos atrás para validar se você está ganhando vantagem ou ficando para trás.
+### 2. Configurar variáveis de ambiente
+
+```bash
+cp .env.example .env
+```
+
+Edite o arquivo `.env` e adicione sua chave da API do Google Gemini:
+
+```
+GOOGLE_API_KEY=sua_chave_aqui
+```
+
+### 3. Executar em modo de desenvolvimento
+
+```bash
+npm run dev
+```
+
+### 4. Build e execução
+
+```bash
+npm run build
+npm start
+```
+
+### 5. Iniciar uma partida no League of Legends
+
+O Jarbas irá detectar automaticamente quando uma partida estiver ativa e começará a monitorar.
+
+## 📝 Observações
+
+- A API Live Client Data do LoL só está disponível quando uma partida está em andamento
+- O certificado SSL da API é auto-assinado — o Axios está configurado para aceitar (`rejectUnauthorized: false`)
+- O TTS utiliza `System.Speech` do Windows — funciona apenas em Windows
+- Os insights são gerados em **português brasileiro**
+- O log dos insights é salvo em `jarbas.log` na raiz do projeto
