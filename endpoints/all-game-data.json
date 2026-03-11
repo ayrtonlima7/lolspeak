@@ -1,0 +1,1160 @@
+// 1. O "Tudo em Um" (o mais usado)
+// Se voce quer capturar o estado completo da partida em um unico JSON, esse e o endpoint de ouro. Ele compila as informacoes de todos os outros endpoints abaixo.
+
+// https://127.0.0.1:2999/liveclientdata/allgamedata
+
+{
+  "activePlayer": {
+    "abilities": {
+      "E": {
+        "abilityLevel": 1,
+        "displayName": "Disparo de Gancho",
+        "id": "CamilleE",
+        "rawDescription": "GeneratedTip_Spell_CamilleE_Description",
+        "rawDisplayName": "GeneratedTip_Spell_CamilleE_DisplayName"
+      },
+      "Passive": {
+        "displayName": "Defesa Adaptativa",
+        "id": "CamillePassive",
+        "rawDescription": "GeneratedTip_Passive_CamillePassive_Description",
+        "rawDisplayName": "GeneratedTip_Passive_CamillePassive_DisplayName"
+      },
+      "Q": {
+        "abilityLevel": 1,
+        "displayName": "Protocolo de Precisão",
+        "id": "CamilleQ",
+        "rawDescription": "GeneratedTip_Spell_CamilleQ_Description",
+        "rawDisplayName": "GeneratedTip_Spell_CamilleQ_DisplayName"
+      },
+      "R": {
+        "abilityLevel": 0,
+        "displayName": "Ultimato Hextec",
+        "id": "CamilleR",
+        "rawDescription": "GeneratedTip_Spell_CamilleR_Description",
+        "rawDisplayName": "GeneratedTip_Spell_CamilleR_DisplayName"
+      },
+      "W": {
+        "abilityLevel": 1,
+        "displayName": "Varredura Tática",
+        "id": "CamilleW",
+        "rawDescription": "GeneratedTip_Spell_CamilleW_Description",
+        "rawDisplayName": "GeneratedTip_Spell_CamilleW_DisplayName"
+      }
+    },
+    "championStats": {
+      "abilityHaste": 10,
+      "abilityPower": 0,
+      "armor": 41.6375007629395,
+      "armorPenetrationFlat": 0,
+      "armorPenetrationPercent": 1,
+      "attackDamage": 89.0050048828125,
+      "attackRange": 125,
+      "attackSpeed": 0.780447483062744,
+      "bonusArmorPenetrationPercent": 1,
+      "bonusMagicPenetrationPercent": 1,
+      "critChance": 0,
+      "critDamage": 200,
+      "currentHealth": 936.025024414063,
+      "healShieldPower": 0,
+      "healthRegenRate": 2.73600006103516,
+      "lifeSteal": 0,
+      "magicLethality": 0,
+      "magicPenetrationFlat": 0,
+      "magicPenetrationPercent": 1,
+      "magicResist": 35.0237503051758,
+      "maxHealth": 936.025024414063,
+      "moveSpeed": 740,
+      "omnivamp": 0,
+      "physicalLethality": 0,
+      "physicalVamp": 0,
+      "resourceMax": 415.700012207031,
+      "resourceRegenRate": 1.85125005245209,
+      "resourceType": "MANA",
+      "resourceValue": 415.700012207031,
+      "spellVamp": 0,
+      "tenacity": 5
+    },
+    "currentGold": 67.4198150634766,
+    "fullRunes": {
+      "generalRunes": [
+        {
+          "displayName": "Conquistador",
+          "id": 8010,
+          "rawDescription": "perk_tooltip_Conqueror",
+          "rawDisplayName": "perk_displayname_Conqueror"
+        },
+        {
+          "displayName": "Triunfo",
+          "id": 9111,
+          "rawDescription": "perk_tooltip_9111",
+          "rawDisplayName": "perk_displayname_9111"
+        },
+        {
+          "displayName": "Lenda: Espontaneidade",
+          "id": 9104,
+          "rawDescription": "perk_tooltip_9104",
+          "rawDisplayName": "perk_displayname_9104"
+        },
+        {
+          "displayName": "Até a Morte",
+          "id": 8299,
+          "rawDescription": "perk_tooltip_8234",
+          "rawDisplayName": "perk_displayname_8234"
+        },
+        {
+          "displayName": "Osso Revestido",
+          "id": 8473,
+          "rawDescription": "perk_tooltip_BonePlatingTooltip",
+          "rawDisplayName": "perk_displayname_BonePlating"
+        },
+        {
+          "displayName": "Golpe de Escudo",
+          "id": 8401,
+          "rawDescription": "perk_tooltip_ShieldBash",
+          "rawDisplayName": "perk_displayname_ShieldBash"
+        }
+      ],
+      "keystone": {
+        "displayName": "Conquistador",
+        "id": 8010,
+        "rawDescription": "perk_tooltip_Conqueror",
+        "rawDisplayName": "perk_displayname_Conqueror"
+      },
+      "primaryRuneTree": {
+        "displayName": "Precisão",
+        "id": 8000,
+        "rawDescription": "perkstyle_tooltip_7201",
+        "rawDisplayName": "perkstyle_displayname_7201"
+      },
+      "secondaryRuneTree": {
+        "displayName": "Determinação",
+        "id": 8400,
+        "rawDescription": "perkstyle_tooltip_7204",
+        "rawDisplayName": "perkstyle_displayname_7204"
+      },
+      "statRunes": [
+        {
+          "id": 5005,
+          "rawDescription": "perk_tooltip_StatModAttackSpeed"
+        },
+        {
+          "id": 5008,
+          "rawDescription": "perk_tooltip_StatModAdaptive"
+        },
+        {
+          "id": 5001,
+          "rawDescription": "perk_tooltip_StatModHealthScaling"
+        }
+      ]
+    },
+    "level": 3,
+    "riotId": "digdin#br1f",
+    "riotIdGameName": "digdin",
+    "riotIdTagLine": "br1f",
+    "summonerName": "digdin#br1f",
+    "teamRelativeColors": true
+  },
+  "allPlayers": [
+    {
+      "championName": "Camille",
+      "isBot": false,
+      "isDead": false,
+      "items": [
+        {
+          "canUse": false,
+          "consumable": false,
+          "count": 1,
+          "displayName": "Escudo de Doran",
+          "itemID": 1054,
+          "price": 450,
+          "rawDescription": "GeneratedTip_Item_1054_Description",
+          "rawDisplayName": "Item_1054_Name",
+          "slot": 0
+        },
+        {
+          "canUse": false,
+          "consumable": false,
+          "count": 1,
+          "displayName": "Espada Longa",
+          "itemID": 1036,
+          "price": 350,
+          "rawDescription": "GeneratedTip_Item_1036_Description",
+          "rawDisplayName": "Item_1036_Name",
+          "slot": 1
+        },
+        {
+          "canUse": false,
+          "consumable": false,
+          "count": 1,
+          "displayName": "Fulgor",
+          "itemID": 3057,
+          "price": 650,
+          "rawDescription": "GeneratedTip_Item_3057_Description",
+          "rawDisplayName": "Item_3057_Name",
+          "slot": 2
+        },
+        {
+          "canUse": true,
+          "consumable": false,
+          "count": 1,
+          "displayName": "Sentinela Invisível",
+          "itemID": 3340,
+          "price": 0,
+          "rawDescription": "GeneratedTip_Item_3340_Description",
+          "rawDisplayName": "Item_3340_Name",
+          "slot": 6
+        }
+      ],
+      "level": 3,
+      "position": "NONE",
+      "rawChampionName": "game_character_displayname_Camille",
+      "rawSkinName": "game_character_skin_displayname_Camille_11",
+      "respawnTimer": 0,
+      "riotId": "digdin#br1f",
+      "riotIdGameName": "digdin",
+      "riotIdTagLine": "br1f",
+      "runes": {
+        "keystone": {
+          "displayName": "Conquistador",
+          "id": 8010,
+          "rawDescription": "perk_tooltip_Conqueror",
+          "rawDisplayName": "perk_displayname_Conqueror"
+        },
+        "primaryRuneTree": {
+          "displayName": "Precisão",
+          "id": 8000,
+          "rawDescription": "perkstyle_tooltip_7201",
+          "rawDisplayName": "perkstyle_displayname_7201"
+        },
+        "secondaryRuneTree": {
+          "displayName": "Determinação",
+          "id": 8400,
+          "rawDescription": "perkstyle_tooltip_7204",
+          "rawDisplayName": "perkstyle_displayname_7204"
+        }
+      },
+      "scores": {
+        "assists": 1,
+        "creepScore": 10,
+        "deaths": 1,
+        "kills": 2,
+        "wardScore": 0
+      },
+      "skinID": 11,
+      "skinName": "Camille Arcana",
+      "summonerName": "digdin#br1f",
+      "summonerSpells": {
+        "summonerSpellOne": {
+          "displayName": "Incendiar",
+          "rawDescription": "GeneratedTip_SummonerSpell_SummonerDot_Description",
+          "rawDisplayName": "GeneratedTip_SummonerSpell_SummonerDot_DisplayName"
+        },
+        "summonerSpellTwo": {
+          "displayName": "Flash",
+          "rawDescription": "GeneratedTip_SummonerSpell_SummonerFlash_Description",
+          "rawDisplayName": "GeneratedTip_SummonerSpell_SummonerFlash_DisplayName"
+        }
+      },
+      "team": "ORDER"
+    },
+    {
+      "championName": "Shen",
+      "isBot": true,
+      "isDead": false,
+      "items": [
+        {
+          "canUse": false,
+          "consumable": false,
+          "count": 1,
+          "displayName": "Filhote de Garrabrasa",
+          "itemID": 1101,
+          "price": 450,
+          "rawDescription": "GeneratedTip_Item_1101_Description",
+          "rawDisplayName": "Item_1101_Name",
+          "slot": 0
+        },
+        {
+          "canUse": true,
+          "consumable": false,
+          "count": 1,
+          "displayName": "Sentinela Invisível",
+          "itemID": 3340,
+          "price": 0,
+          "rawDescription": "GeneratedTip_Item_3340_Description",
+          "rawDisplayName": "Item_3340_Name",
+          "slot": 6
+        }
+      ],
+      "level": 4,
+      "position": "JUNGLE",
+      "rawChampionName": "game_character_displayname_Shen",
+      "rawSkinName": "game_character_displayname_Shen",
+      "respawnTimer": 0,
+      "riotId": "Shen#BOT",
+      "riotIdGameName": "Shen",
+      "riotIdTagLine": "BOT",
+      "runes": {
+        "keystone": {
+          "displayName": "Aperto dos Mortos-Vivos",
+          "id": 8437,
+          "rawDescription": "perk_tooltip_GraspOfTheUndying",
+          "rawDisplayName": "perk_displayname_GraspOfTheUndying"
+        },
+        "primaryRuneTree": {
+          "displayName": "Determinação",
+          "id": 8400,
+          "rawDescription": "perkstyle_tooltip_7204",
+          "rawDisplayName": "perkstyle_displayname_7204"
+        },
+        "secondaryRuneTree": {
+          "displayName": "Feitiçaria",
+          "id": 8200,
+          "rawDescription": "perkstyle_tooltip_7202",
+          "rawDisplayName": "perkstyle_displayname_7202"
+        }
+      },
+      "scores": {
+        "assists": 0,
+        "creepScore": 20,
+        "deaths": 0,
+        "kills": 0,
+        "wardScore": 0
+      },
+      "skinID": 0,
+      "skinName": "Shen",
+      "summonerName": "Shen Bot",
+      "summonerSpells": {
+        "summonerSpellOne": {
+          "displayName": "Flash",
+          "rawDescription": "GeneratedTip_SummonerSpell_SummonerFlash_Description",
+          "rawDisplayName": "GeneratedTip_SummonerSpell_SummonerFlash_DisplayName"
+        },
+        "summonerSpellTwo": {
+          "displayName": "Golpear",
+          "rawDescription": "GeneratedTip_SummonerSpell_SummonerSmite_Description",
+          "rawDisplayName": "GeneratedTip_SummonerSpell_SummonerSmite_DisplayName"
+        }
+      },
+      "team": "ORDER"
+    },
+    {
+      "championName": "Nautilus",
+      "isBot": true,
+      "isDead": false,
+      "items": [
+        {
+          "canUse": false,
+          "consumable": false,
+          "count": 1,
+          "displayName": "Atlas Mundial",
+          "itemID": 3865,
+          "price": 400,
+          "rawDescription": "GeneratedTip_Item_3865_Description",
+          "rawDisplayName": "Item_3865_Name",
+          "slot": 0
+        },
+        {
+          "canUse": false,
+          "consumable": false,
+          "count": 1,
+          "displayName": "Botas",
+          "itemID": 1001,
+          "price": 300,
+          "rawDescription": "GeneratedTip_Item_1001_Description",
+          "rawDisplayName": "Item_1001_Name",
+          "slot": 1
+        },
+        {
+          "canUse": false,
+          "consumable": false,
+          "count": 1,
+          "displayName": "Couraça de Pano",
+          "itemID": 1029,
+          "price": 300,
+          "rawDescription": "GeneratedTip_Item_1029_Description",
+          "rawDisplayName": "Item_1029_Name",
+          "slot": 2
+        },
+        {
+          "canUse": true,
+          "consumable": false,
+          "count": 1,
+          "displayName": "Sentinela Invisível",
+          "itemID": 3340,
+          "price": 0,
+          "rawDescription": "GeneratedTip_Item_3340_Description",
+          "rawDisplayName": "Item_3340_Name",
+          "slot": 6
+        }
+      ],
+      "level": 3,
+      "position": "UTILITY",
+      "rawChampionName": "game_character_displayname_Nautilus",
+      "rawSkinName": "game_character_displayname_Nautilus",
+      "respawnTimer": 0,
+      "riotId": "Nautilus#BOT",
+      "riotIdGameName": "Nautilus",
+      "riotIdTagLine": "BOT",
+      "runes": {
+        "keystone": {
+          "displayName": "Aperto dos Mortos-Vivos",
+          "id": 8437,
+          "rawDescription": "perk_tooltip_GraspOfTheUndying",
+          "rawDisplayName": "perk_displayname_GraspOfTheUndying"
+        },
+        "primaryRuneTree": {
+          "displayName": "Determinação",
+          "id": 8400,
+          "rawDescription": "perkstyle_tooltip_7204",
+          "rawDisplayName": "perkstyle_displayname_7204"
+        },
+        "secondaryRuneTree": {
+          "displayName": "Feitiçaria",
+          "id": 8200,
+          "rawDescription": "perkstyle_tooltip_7202",
+          "rawDisplayName": "perkstyle_displayname_7202"
+        }
+      },
+      "scores": {
+        "assists": 0,
+        "creepScore": 0,
+        "deaths": 0,
+        "kills": 1,
+        "wardScore": 0
+      },
+      "skinID": 0,
+      "skinName": "Nautilus",
+      "summonerName": "Nautilus Bot",
+      "summonerSpells": {
+        "summonerSpellOne": {
+          "displayName": "Flash",
+          "rawDescription": "GeneratedTip_SummonerSpell_SummonerFlash_Description",
+          "rawDisplayName": "GeneratedTip_SummonerSpell_SummonerFlash_DisplayName"
+        },
+        "summonerSpellTwo": {
+          "displayName": "Incendiar",
+          "rawDescription": "GeneratedTip_SummonerSpell_SummonerDot_Description",
+          "rawDisplayName": "GeneratedTip_SummonerSpell_SummonerDot_DisplayName"
+        }
+      },
+      "team": "ORDER"
+    },
+    {
+      "championName": "Gragas",
+      "isBot": true,
+      "isDead": false,
+      "items": [
+        {
+          "canUse": false,
+          "consumable": false,
+          "count": 1,
+          "displayName": "Lágrima da Deusa",
+          "itemID": 3070,
+          "price": 400,
+          "rawDescription": "GeneratedTip_Item_3070_Description",
+          "rawDisplayName": "Item_3070_Name",
+          "slot": 0
+        },
+        {
+          "canUse": true,
+          "consumable": true,
+          "count": 1,
+          "displayName": "Sentinela de Controle",
+          "itemID": 2055,
+          "price": 75,
+          "rawDescription": "GeneratedTip_Item_2055_Description",
+          "rawDisplayName": "Item_2055_Name",
+          "slot": 1
+        },
+        {
+          "canUse": false,
+          "consumable": false,
+          "count": 1,
+          "displayName": "Cristal de Safira",
+          "itemID": 1027,
+          "price": 300,
+          "rawDescription": "GeneratedTip_Item_1027_Description",
+          "rawDisplayName": "Item_1027_Name",
+          "slot": 2
+        },
+        {
+          "canUse": true,
+          "consumable": false,
+          "count": 1,
+          "displayName": "Sentinela Invisível",
+          "itemID": 3340,
+          "price": 0,
+          "rawDescription": "GeneratedTip_Item_3340_Description",
+          "rawDisplayName": "Item_3340_Name",
+          "slot": 6
+        }
+      ],
+      "level": 3,
+      "position": "MIDDLE",
+      "rawChampionName": "game_character_displayname_Gragas",
+      "rawSkinName": "game_character_displayname_Gragas",
+      "respawnTimer": 0,
+      "riotId": "Gragas#BOT",
+      "riotIdGameName": "Gragas",
+      "riotIdTagLine": "BOT",
+      "runes": {
+        "keystone": {
+          "displayName": "Aperto dos Mortos-Vivos",
+          "id": 8437,
+          "rawDescription": "perk_tooltip_GraspOfTheUndying",
+          "rawDisplayName": "perk_displayname_GraspOfTheUndying"
+        },
+        "primaryRuneTree": {
+          "displayName": "Determinação",
+          "id": 8400,
+          "rawDescription": "perkstyle_tooltip_7204",
+          "rawDisplayName": "perkstyle_displayname_7204"
+        },
+        "secondaryRuneTree": {
+          "displayName": "Feitiçaria",
+          "id": 8200,
+          "rawDescription": "perkstyle_tooltip_7202",
+          "rawDisplayName": "perkstyle_displayname_7202"
+        }
+      },
+      "scores": {
+        "assists": 0,
+        "creepScore": 0,
+        "deaths": 0,
+        "kills": 0,
+        "wardScore": 0
+      },
+      "skinID": 0,
+      "skinName": "Gragas",
+      "summonerName": "Gragas Bot",
+      "summonerSpells": {
+        "summonerSpellOne": {
+          "displayName": "Flash",
+          "rawDescription": "GeneratedTip_SummonerSpell_SummonerFlash_Description",
+          "rawDisplayName": "GeneratedTip_SummonerSpell_SummonerFlash_DisplayName"
+        },
+        "summonerSpellTwo": {
+          "displayName": "Incendiar",
+          "rawDescription": "GeneratedTip_SummonerSpell_SummonerDot_Description",
+          "rawDisplayName": "GeneratedTip_SummonerSpell_SummonerDot_DisplayName"
+        }
+      },
+      "team": "ORDER"
+    },
+    {
+      "championName": "Ashe",
+      "isBot": true,
+      "isDead": true,
+      "items": [
+        {
+          "canUse": false,
+          "consumable": false,
+          "count": 1,
+          "displayName": "Lâmina de Doran",
+          "itemID": 1055,
+          "price": 450,
+          "rawDescription": "GeneratedTip_Item_1055_Description",
+          "rawDisplayName": "Item_1055_Name",
+          "slot": 0
+        },
+        {
+          "canUse": false,
+          "consumable": false,
+          "count": 1,
+          "displayName": "Adaga",
+          "itemID": 1042,
+          "price": 250,
+          "rawDescription": "GeneratedTip_Item_1042_Description",
+          "rawDisplayName": "Item_1042_Name",
+          "slot": 1
+        },
+        {
+          "canUse": false,
+          "consumable": false,
+          "count": 1,
+          "displayName": "Adaga",
+          "itemID": 1042,
+          "price": 250,
+          "rawDescription": "GeneratedTip_Item_1042_Description",
+          "rawDisplayName": "Item_1042_Name",
+          "slot": 2
+        },
+        {
+          "canUse": true,
+          "consumable": false,
+          "count": 1,
+          "displayName": "Sentinela Invisível",
+          "itemID": 3340,
+          "price": 0,
+          "rawDescription": "GeneratedTip_Item_3340_Description",
+          "rawDisplayName": "Item_3340_Name",
+          "slot": 6
+        }
+      ],
+      "level": 3,
+      "position": "BOTTOM",
+      "rawChampionName": "game_character_displayname_Ashe",
+      "rawSkinName": "game_character_displayname_Ashe",
+      "respawnTimer": 2.53551864624023,
+      "riotId": "Ashe#BOT",
+      "riotIdGameName": "Ashe",
+      "riotIdTagLine": "BOT",
+      "runes": {
+        "keystone": {
+          "displayName": "Pressione o Ataque",
+          "id": 8005,
+          "rawDescription": "perk_tooltip_PressTheAttack",
+          "rawDisplayName": "perk_displayname_PressTheAttack"
+        },
+        "primaryRuneTree": {
+          "displayName": "Precisão",
+          "id": 8000,
+          "rawDescription": "perkstyle_tooltip_7201",
+          "rawDisplayName": "perkstyle_displayname_7201"
+        },
+        "secondaryRuneTree": {
+          "displayName": "Feitiçaria",
+          "id": 8200,
+          "rawDescription": "perkstyle_tooltip_7202",
+          "rawDisplayName": "perkstyle_displayname_7202"
+        }
+      },
+      "scores": {
+        "assists": 0,
+        "creepScore": 10,
+        "deaths": 2,
+        "kills": 0,
+        "wardScore": 0
+      },
+      "skinID": 0,
+      "skinName": "Ashe",
+      "summonerName": "Ashe Bot",
+      "summonerSpells": {
+        "summonerSpellOne": {
+          "displayName": "Barreira",
+          "rawDescription": "GeneratedTip_SummonerSpell_SummonerBarrier_Description",
+          "rawDisplayName": "GeneratedTip_SummonerSpell_SummonerBarrier_DisplayName"
+        },
+        "summonerSpellTwo": {
+          "displayName": "Flash",
+          "rawDescription": "GeneratedTip_SummonerSpell_SummonerFlash_Description",
+          "rawDisplayName": "GeneratedTip_SummonerSpell_SummonerFlash_DisplayName"
+        }
+      },
+      "team": "ORDER"
+    },
+    {
+      "championName": "Blitzcrank",
+      "isBot": true,
+      "isDead": false,
+      "items": [
+        {
+          "canUse": false,
+          "consumable": false,
+          "count": 1,
+          "displayName": "Atlas Mundial",
+          "itemID": 3865,
+          "price": 400,
+          "rawDescription": "GeneratedTip_Item_3865_Description",
+          "rawDisplayName": "Item_3865_Name",
+          "slot": 0
+        },
+        {
+          "canUse": false,
+          "consumable": false,
+          "count": 1,
+          "displayName": "Cristal de Rubi",
+          "itemID": 1028,
+          "price": 400,
+          "rawDescription": "GeneratedTip_Item_1028_Description",
+          "rawDisplayName": "Item_1028_Name",
+          "slot": 1
+        },
+        {
+          "canUse": true,
+          "consumable": false,
+          "count": 1,
+          "displayName": "Sentinela Invisível",
+          "itemID": 3340,
+          "price": 0,
+          "rawDescription": "GeneratedTip_Item_3340_Description",
+          "rawDisplayName": "Item_3340_Name",
+          "slot": 6
+        }
+      ],
+      "level": 3,
+      "position": "UTILITY",
+      "rawChampionName": "game_character_displayname_Blitzcrank",
+      "rawSkinName": "game_character_displayname_Blitzcrank",
+      "respawnTimer": 0,
+      "riotId": "Blitzcrank#BOT",
+      "riotIdGameName": "Blitzcrank",
+      "riotIdTagLine": "BOT",
+      "runes": {
+        "keystone": {
+          "displayName": "Aperto dos Mortos-Vivos",
+          "id": 8437,
+          "rawDescription": "perk_tooltip_GraspOfTheUndying",
+          "rawDisplayName": "perk_displayname_GraspOfTheUndying"
+        },
+        "primaryRuneTree": {
+          "displayName": "Determinação",
+          "id": 8400,
+          "rawDescription": "perkstyle_tooltip_7204",
+          "rawDisplayName": "perkstyle_displayname_7204"
+        },
+        "secondaryRuneTree": {
+          "displayName": "Feitiçaria",
+          "id": 8200,
+          "rawDescription": "perkstyle_tooltip_7202",
+          "rawDisplayName": "perkstyle_displayname_7202"
+        }
+      },
+      "scores": {
+        "assists": 0,
+        "creepScore": 0,
+        "deaths": 1,
+        "kills": 2,
+        "wardScore": 0
+      },
+      "skinID": 0,
+      "skinName": "Blitzcrank",
+      "summonerName": "Blitzcrank Bot",
+      "summonerSpells": {
+        "summonerSpellOne": {
+          "displayName": "Flash",
+          "rawDescription": "GeneratedTip_SummonerSpell_SummonerFlash_Description",
+          "rawDisplayName": "GeneratedTip_SummonerSpell_SummonerFlash_DisplayName"
+        },
+        "summonerSpellTwo": {
+          "displayName": "Incendiar",
+          "rawDescription": "GeneratedTip_SummonerSpell_SummonerDot_Description",
+          "rawDisplayName": "GeneratedTip_SummonerSpell_SummonerDot_DisplayName"
+        }
+      },
+      "team": "CHAOS"
+    },
+    {
+      "championName": "Malzahar",
+      "isBot": true,
+      "isDead": false,
+      "items": [
+        {
+          "canUse": false,
+          "consumable": false,
+          "count": 1,
+          "displayName": "Lágrima da Deusa",
+          "itemID": 3070,
+          "price": 400,
+          "rawDescription": "GeneratedTip_Item_3070_Description",
+          "rawDisplayName": "Item_3070_Name",
+          "slot": 0
+        },
+        {
+          "canUse": true,
+          "consumable": false,
+          "count": 1,
+          "displayName": "Sentinela Invisível",
+          "itemID": 3340,
+          "price": 0,
+          "rawDescription": "GeneratedTip_Item_3340_Description",
+          "rawDisplayName": "Item_3340_Name",
+          "slot": 6
+        }
+      ],
+      "level": 4,
+      "position": "MIDDLE",
+      "rawChampionName": "game_character_displayname_Malzahar",
+      "rawSkinName": "game_character_displayname_Malzahar",
+      "respawnTimer": 0,
+      "riotId": "Malzahar#BOT",
+      "riotIdGameName": "Malzahar",
+      "riotIdTagLine": "BOT",
+      "runes": {
+        "keystone": {
+          "displayName": "Cometa Arcano",
+          "id": 8229,
+          "rawDescription": "perk_tooltip_ArcaneComet",
+          "rawDisplayName": "perk_displayname_ArcaneComet"
+        },
+        "primaryRuneTree": {
+          "displayName": "Feitiçaria",
+          "id": 8200,
+          "rawDescription": "perkstyle_tooltip_7202",
+          "rawDisplayName": "perkstyle_displayname_7202"
+        },
+        "secondaryRuneTree": {
+          "displayName": "Dominação",
+          "id": 8100,
+          "rawDescription": "perkstyle_tooltip_7200",
+          "rawDisplayName": "perkstyle_displayname_7200"
+        }
+      },
+      "scores": {
+        "assists": 1,
+        "creepScore": 0,
+        "deaths": 0,
+        "kills": 0,
+        "wardScore": 0
+      },
+      "skinID": 0,
+      "skinName": "Malzahar",
+      "summonerName": "Malzahar Bot",
+      "summonerSpells": {
+        "summonerSpellOne": {
+          "displayName": "Flash",
+          "rawDescription": "GeneratedTip_SummonerSpell_SummonerFlash_Description",
+          "rawDisplayName": "GeneratedTip_SummonerSpell_SummonerFlash_DisplayName"
+        },
+        "summonerSpellTwo": {
+          "displayName": "Teleporte",
+          "rawDescription": "GeneratedTip_SummonerSpell_SummonerTeleport_Description",
+          "rawDisplayName": "GeneratedTip_SummonerSpell_SummonerTeleport_DisplayName"
+        }
+      },
+      "team": "CHAOS"
+    },
+    {
+      "championName": "Dr. Mundo",
+      "isBot": true,
+      "isDead": false,
+      "items": [
+        {
+          "canUse": false,
+          "consumable": false,
+          "count": 1,
+          "displayName": "Filhote de Garrabrasa",
+          "itemID": 1101,
+          "price": 450,
+          "rawDescription": "GeneratedTip_Item_1101_Description",
+          "rawDisplayName": "Item_1101_Name",
+          "slot": 0
+        },
+        {
+          "canUse": true,
+          "consumable": false,
+          "count": 1,
+          "displayName": "Sentinela Invisível",
+          "itemID": 3340,
+          "price": 0,
+          "rawDescription": "GeneratedTip_Item_3340_Description",
+          "rawDisplayName": "Item_3340_Name",
+          "slot": 6
+        }
+      ],
+      "level": 4,
+      "position": "JUNGLE",
+      "rawChampionName": "game_character_displayname_DrMundo",
+      "rawSkinName": "game_character_displayname_DrMundo",
+      "respawnTimer": 0,
+      "riotId": "DrMundo#BOT",
+      "riotIdGameName": "DrMundo",
+      "riotIdTagLine": "BOT",
+      "runes": {
+        "keystone": {
+          "displayName": "Aperto dos Mortos-Vivos",
+          "id": 8437,
+          "rawDescription": "perk_tooltip_GraspOfTheUndying",
+          "rawDisplayName": "perk_displayname_GraspOfTheUndying"
+        },
+        "primaryRuneTree": {
+          "displayName": "Determinação",
+          "id": 8400,
+          "rawDescription": "perkstyle_tooltip_7204",
+          "rawDisplayName": "perkstyle_displayname_7204"
+        },
+        "secondaryRuneTree": {
+          "displayName": "Feitiçaria",
+          "id": 8200,
+          "rawDescription": "perkstyle_tooltip_7202",
+          "rawDisplayName": "perkstyle_displayname_7202"
+        }
+      },
+      "scores": {
+        "assists": 0,
+        "creepScore": 0,
+        "deaths": 1,
+        "kills": 0,
+        "wardScore": 0
+      },
+      "skinID": 0,
+      "skinName": "Dr. Mundo",
+      "summonerName": "Dr. Mundo Bot",
+      "summonerSpells": {
+        "summonerSpellOne": {
+          "displayName": "Flash",
+          "rawDescription": "GeneratedTip_SummonerSpell_SummonerFlash_Description",
+          "rawDisplayName": "GeneratedTip_SummonerSpell_SummonerFlash_DisplayName"
+        },
+        "summonerSpellTwo": {
+          "displayName": "Golpear",
+          "rawDescription": "GeneratedTip_SummonerSpell_SummonerSmite_Description",
+          "rawDisplayName": "GeneratedTip_SummonerSpell_SummonerSmite_DisplayName"
+        }
+      },
+      "team": "CHAOS"
+    },
+    {
+      "championName": "Maokai",
+      "isBot": true,
+      "isDead": false,
+      "items": [
+        {
+          "canUse": false,
+          "consumable": false,
+          "count": 1,
+          "displayName": "Escudo de Doran",
+          "itemID": 1054,
+          "price": 450,
+          "rawDescription": "GeneratedTip_Item_1054_Description",
+          "rawDisplayName": "Item_1054_Name",
+          "slot": 0
+        },
+        {
+          "canUse": true,
+          "consumable": true,
+          "count": 1,
+          "displayName": "Sentinela de Controle",
+          "itemID": 2055,
+          "price": 75,
+          "rawDescription": "GeneratedTip_Item_2055_Description",
+          "rawDisplayName": "Item_2055_Name",
+          "slot": 1
+        },
+        {
+          "canUse": true,
+          "consumable": false,
+          "count": 1,
+          "displayName": "Sentinela Invisível",
+          "itemID": 3340,
+          "price": 0,
+          "rawDescription": "GeneratedTip_Item_3340_Description",
+          "rawDisplayName": "Item_3340_Name",
+          "slot": 6
+        }
+      ],
+      "level": 4,
+      "position": "TOP",
+      "rawChampionName": "game_character_displayname_Maokai",
+      "rawSkinName": "game_character_displayname_Maokai",
+      "respawnTimer": 0,
+      "riotId": "Maokai#BOT",
+      "riotIdGameName": "Maokai",
+      "riotIdTagLine": "BOT",
+      "runes": {
+        "keystone": {
+          "displayName": "Aperto dos Mortos-Vivos",
+          "id": 8437,
+          "rawDescription": "perk_tooltip_GraspOfTheUndying",
+          "rawDisplayName": "perk_displayname_GraspOfTheUndying"
+        },
+        "primaryRuneTree": {
+          "displayName": "Determinação",
+          "id": 8400,
+          "rawDescription": "perkstyle_tooltip_7204",
+          "rawDisplayName": "perkstyle_displayname_7204"
+        },
+        "secondaryRuneTree": {
+          "displayName": "Feitiçaria",
+          "id": 8200,
+          "rawDescription": "perkstyle_tooltip_7202",
+          "rawDisplayName": "perkstyle_displayname_7202"
+        }
+      },
+      "scores": {
+        "assists": 0,
+        "creepScore": 10,
+        "deaths": 1,
+        "kills": 1,
+        "wardScore": 0
+      },
+      "skinID": 0,
+      "skinName": "Maokai",
+      "summonerName": "Maokai Bot",
+      "summonerSpells": {
+        "summonerSpellOne": {
+          "displayName": "Flash",
+          "rawDescription": "GeneratedTip_SummonerSpell_SummonerFlash_Description",
+          "rawDisplayName": "GeneratedTip_SummonerSpell_SummonerFlash_DisplayName"
+        },
+        "summonerSpellTwo": {
+          "displayName": "Teleporte",
+          "rawDescription": "GeneratedTip_SummonerSpell_SummonerTeleport_Description",
+          "rawDisplayName": "GeneratedTip_SummonerSpell_SummonerTeleport_DisplayName"
+        }
+      },
+      "team": "CHAOS"
+    },
+    {
+      "championName": "Lucian",
+      "isBot": true,
+      "isDead": false,
+      "items": [
+        {
+          "canUse": false,
+          "consumable": false,
+          "count": 1,
+          "displayName": "Lâmina de Doran",
+          "itemID": 1055,
+          "price": 450,
+          "rawDescription": "GeneratedTip_Item_1055_Description",
+          "rawDisplayName": "Item_1055_Name",
+          "slot": 0
+        },
+        {
+          "canUse": true,
+          "consumable": true,
+          "count": 1,
+          "displayName": "Sentinela de Controle",
+          "itemID": 2055,
+          "price": 75,
+          "rawDescription": "GeneratedTip_Item_2055_Description",
+          "rawDisplayName": "Item_2055_Name",
+          "slot": 1
+        },
+        {
+          "canUse": true,
+          "consumable": false,
+          "count": 1,
+          "displayName": "Sentinela Invisível",
+          "itemID": 3340,
+          "price": 0,
+          "rawDescription": "GeneratedTip_Item_3340_Description",
+          "rawDisplayName": "Item_3340_Name",
+          "slot": 6
+        }
+      ],
+      "level": 3,
+      "position": "BOTTOM",
+      "rawChampionName": "game_character_displayname_Lucian",
+      "rawSkinName": "game_character_displayname_Lucian",
+      "respawnTimer": 0,
+      "riotId": "Lucian#BOT",
+      "riotIdGameName": "Lucian",
+      "riotIdTagLine": "BOT",
+      "runes": {
+        "keystone": {
+          "displayName": "Pressione o Ataque",
+          "id": 8005,
+          "rawDescription": "perk_tooltip_PressTheAttack",
+          "rawDisplayName": "perk_displayname_PressTheAttack"
+        },
+        "primaryRuneTree": {
+          "displayName": "Precisão",
+          "id": 8000,
+          "rawDescription": "perkstyle_tooltip_7201",
+          "rawDisplayName": "perkstyle_displayname_7201"
+        },
+        "secondaryRuneTree": {
+          "displayName": "Feitiçaria",
+          "id": 8200,
+          "rawDescription": "perkstyle_tooltip_7202",
+          "rawDisplayName": "perkstyle_displayname_7202"
+        }
+      },
+      "scores": {
+        "assists": 0,
+        "creepScore": 10,
+        "deaths": 0,
+        "kills": 0,
+        "wardScore": 0
+      },
+      "skinID": 0,
+      "skinName": "Lucian",
+      "summonerName": "Lucian Bot",
+      "summonerSpells": {
+        "summonerSpellOne": {
+          "displayName": "Barreira",
+          "rawDescription": "GeneratedTip_SummonerSpell_SummonerBarrier_Description",
+          "rawDisplayName": "GeneratedTip_SummonerSpell_SummonerBarrier_DisplayName"
+        },
+        "summonerSpellTwo": {
+          "displayName": "Flash",
+          "rawDescription": "GeneratedTip_SummonerSpell_SummonerFlash_Description",
+          "rawDisplayName": "GeneratedTip_SummonerSpell_SummonerFlash_DisplayName"
+        }
+      },
+      "team": "CHAOS"
+    }
+  ],
+  "events": {
+    "Events": [
+      {
+        "EventID": 0,
+        "EventName": "GameStart",
+        "EventTime": 0.0235706008970737
+      },
+      {
+        "EventID": 1,
+        "EventName": "MinionsSpawning",
+        "EventTime": 30.0352916717529
+      },
+      {
+        "Assisters": [],
+        "EventID": 2,
+        "EventName": "ChampionKill",
+        "EventTime": 122.580146789551,
+        "KillerName": "Blitzcrank Bot",
+        "VictimName": "Ashe Bot"
+      },
+      {
+        "EventID": 3,
+        "EventName": "FirstBlood",
+        "EventTime": 122.580146789551,
+        "Recipient": "Blitzcrank Bot"
+      },
+      {
+        "Assisters": [],
+        "EventID": 4,
+        "EventName": "ChampionKill",
+        "EventTime": 133.416732788086,
+        "KillerName": "digdin",
+        "VictimName": "Maokai Bot"
+      },
+      {
+        "Assisters": [
+          "digdin"
+        ],
+        "EventID": 5,
+        "EventName": "ChampionKill",
+        "EventTime": 165.673568725586,
+        "KillerName": "Nautilus Bot",
+        "VictimName": "Blitzcrank Bot"
+      },
+      {
+        "Assisters": [],
+        "EventID": 6,
+        "EventName": "ChampionKill",
+        "EventTime": 194.261795043945,
+        "KillerName": "digdin",
+        "VictimName": "Dr. Mundo Bot"
+      },
+      {
+        "Assisters": [
+          "Malzahar Bot",
+          "Dr. Mundo Bot"
+        ],
+        "EventID": 7,
+        "EventName": "ChampionKill",
+        "EventTime": 201.317489624023,
+        "KillerName": "Maokai Bot",
+        "VictimName": "digdin"
+      },
+      {
+        "Assisters": [],
+        "EventID": 8,
+        "EventName": "ChampionKill",
+        "EventTime": 211.744827270508,
+        "KillerName": "Blitzcrank Bot",
+        "VictimName": "Ashe Bot"
+      }
+    ]
+  },
+  "gameData": {
+    "gameMode": "PRACTICETOOL",
+    "gameTime": 221.20930480957,
+    "mapName": "Map11",
+    "mapNumber": 11,
+    "mapTerrain": "Default"
+  }
+}

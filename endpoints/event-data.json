@@ -1,0 +1,196 @@
+//3. Eventos da Partida
+//Retorna um array com todos os eventos que aconteceram ate o momento (First Blood, destruicao de torres, dragoes abatidos, roubo de Barao, abates multiplos, etc.).
+
+{
+"Events": [
+{
+"EventID": 0,
+"EventName": "GameStart",
+"EventTime": 0.0235706008970737
+},
+{
+"EventID": 1,
+"EventName": "MinionsSpawning",
+"EventTime": 30.0352916717529
+},
+{
+"Assisters": [],
+"EventID": 2,
+"EventName": "ChampionKill",
+"EventTime": 122.580146789551,
+"KillerName": "Blitzcrank Bot",
+"VictimName": "Ashe Bot"
+},
+{
+"EventID": 3,
+"EventName": "FirstBlood",
+"EventTime": 122.580146789551,
+"Recipient": "Blitzcrank Bot"
+},
+{
+"Assisters": [],
+"EventID": 4,
+"EventName": "ChampionKill",
+"EventTime": 133.416732788086,
+"KillerName": "digdin",
+"VictimName": "Maokai Bot"
+},
+{
+"Assisters": [
+"digdin"
+],
+"EventID": 5,
+"EventName": "ChampionKill",
+"EventTime": 165.673568725586,
+"KillerName": "Nautilus Bot",
+"VictimName": "Blitzcrank Bot"
+},
+{
+"Assisters": [],
+"EventID": 6,
+"EventName": "ChampionKill",
+"EventTime": 194.261795043945,
+"KillerName": "digdin",
+"VictimName": "Dr. Mundo Bot"
+},
+{
+"Assisters": [
+"Malzahar Bot",
+"Dr. Mundo Bot"
+],
+"EventID": 7,
+"EventName": "ChampionKill",
+"EventTime": 201.317489624023,
+"KillerName": "Maokai Bot",
+"VictimName": "digdin"
+},
+{
+"Assisters": [],
+"EventID": 8,
+"EventName": "ChampionKill",
+"EventTime": 211.744827270508,
+"KillerName": "Blitzcrank Bot",
+"VictimName": "Ashe Bot"
+},
+{
+"Assisters": [
+"Maokai Bot"
+],
+"EventID": 9,
+"EventName": "ChampionKill",
+"EventTime": 235.238433837891,
+"KillerName": "Dr. Mundo Bot",
+"VictimName": "Shen Bot"
+},
+{
+"Assisters": [],
+"EventID": 10,
+"EventName": "ChampionKill",
+"EventTime": 249.909301757813,
+"KillerName": "Gragas Bot",
+"VictimName": "Maokai Bot"
+},
+{
+"Assisters": [
+"Nautilus Bot"
+],
+"EventID": 11,
+"EventName": "ChampionKill",
+"EventTime": 260.217803955078,
+"KillerName": "Ashe Bot",
+"VictimName": "Blitzcrank Bot"
+},
+{
+"Assisters": [
+"Lucian Bot"
+],
+"EventID": 12,
+"EventName": "ChampionKill",
+"EventTime": 303.055694580078,
+"KillerName": "Blitzcrank Bot",
+"VictimName": "Nautilus Bot"
+},
+{
+"Assisters": [
+"Lucian Bot"
+],
+"EventID": 13,
+"EventName": "ChampionKill",
+"EventTime": 316.257690429688,
+"KillerName": "Blitzcrank Bot",
+"VictimName": "Ashe Bot"
+},
+{
+"Assisters": [],
+"EventID": 14,
+"EventName": "ChampionKill",
+"EventTime": 373.081024169922,
+"KillerName": "Shen Bot",
+"VictimName": "Malzahar Bot"
+},
+{
+"Assisters": [
+"digdin"
+],
+"DragonType": "Hextech",
+"EventID": 15,
+"EventName": "DragonKill",
+"EventTime": 431.912841796875,
+"KillerName": "Shen Bot",
+"Stolen": "False"
+},
+{
+"Assisters": [
+"Shen Bot",
+"Gragas Bot"
+],
+"EventID": 16,
+"EventName": "ChampionKill",
+"EventTime": 452.458984375,
+"KillerName": "Nautilus Bot",
+"VictimName": "Dr. Mundo Bot"
+},
+{
+"Assisters": [
+"Ashe Bot"
+],
+"EventID": 17,
+"EventName": "ChampionKill",
+"EventTime": 462.266357421875,
+"KillerName": "digdin",
+"VictimName": "Lucian Bot"
+},
+{
+"Assisters": [
+"Ashe Bot"
+],
+"EventID": 18,
+"EventName": "ChampionKill",
+"EventTime": 467.198272705078,
+"KillerName": "digdin",
+"VictimName": "Blitzcrank Bot"
+},
+{
+"EventID": 19,
+"EventName": "Multikill",
+"EventTime": 467.198272705078,
+"KillStreak": 2,
+"KillerName": "digdin"
+},
+{
+"Assisters": [],
+"EventID": 20,
+"EventName": "ChampionKill",
+"EventTime": 471.783752441406,
+"KillerName": "digdin",
+"VictimName": "Maokai Bot"
+},
+{
+"EventID": 21,
+"EventName": "Multikill",
+"EventTime": 471.783752441406,
+"KillStreak": 3,
+"KillerName": "digdin"
+}
+]
+}

@@ -1,0 +1,30 @@
+{
+  "name": "lolspeak",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Este projeto é um assistente (Jarvis) para League of Legends.",
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@google/generative-ai": "^0.24.1",
+    "@langchain/google-genai": "^2.1.24",
+    "axios": "^1.13.6",
+    "dotenv": "^17.3.1",
+    "langchain": "^1.2.30"
+  },
+  "devDependencies": {
+    "@types/node": "^25.4.0",
+    "nodemon": "^3.1.14",
+    "ts-node": "^10.9.2",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3"
+  }
+}

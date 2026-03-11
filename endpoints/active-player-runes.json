@@ -1,0 +1,77 @@
+//5. Dados Especificos do Seu Campeao (Jogador Ativo)
+//Alem do /activeplayer que voce ja usou, voce pode quebrar os dados em partes menores:
+
+//https://127.0.0.1:2999/liveclientdata/activeplayerrunes
+
+{
+  "generalRunes": [
+    {
+      "displayName": "Conquistador",
+      "id": 8010,
+      "rawDescription": "perk_tooltip_Conqueror",
+      "rawDisplayName": "perk_displayname_Conqueror"
+    },
+    {
+      "displayName": "Triunfo",
+      "id": 9111,
+      "rawDescription": "perk_tooltip_9111",
+      "rawDisplayName": "perk_displayname_9111"
+    },
+    {
+      "displayName": "Lenda: Espontaneidade",
+      "id": 9104,
+      "rawDescription": "perk_tooltip_9104",
+      "rawDisplayName": "perk_displayname_9104"
+    },
+    {
+      "displayName": "Até a Morte",
+      "id": 8299,
+      "rawDescription": "perk_tooltip_8234",
+      "rawDisplayName": "perk_displayname_8234"
+    },
+    {
+      "displayName": "Osso Revestido",
+      "id": 8473,
+      "rawDescription": "perk_tooltip_BonePlatingTooltip",
+      "rawDisplayName": "perk_displayname_BonePlating"
+    },
+    {
+      "displayName": "Golpe de Escudo",
+      "id": 8401,
+      "rawDescription": "perk_tooltip_ShieldBash",
+      "rawDisplayName": "perk_displayname_ShieldBash"
+    }
+  ],
+  "keystone": {
+    "displayName": "Conquistador",
+    "id": 8010,
+    "rawDescription": "perk_tooltip_Conqueror",
+    "rawDisplayName": "perk_displayname_Conqueror"
+  },
+  "primaryRuneTree": {
+    "displayName": "Precisão",
+    "id": 8000,
+    "rawDescription": "perkstyle_tooltip_7201",
+    "rawDisplayName": "perkstyle_displayname_7201"
+  },
+  "secondaryRuneTree": {
+    "displayName": "Determinação",
+    "id": 8400,
+    "rawDescription": "perkstyle_tooltip_7204",
+    "rawDisplayName": "perkstyle_displayname_7204"
+  },
+  "statRunes": [
+    {
+      "id": 5005,
+      "rawDescription": "perk_tooltip_StatModAttackSpeed"
+    },
+    {
+      "id": 5008,
+      "rawDescription": "perk_tooltip_StatModAdaptive"
+    },
+    {
+      "id": 5001,
+      "rawDescription": "perk_tooltip_StatModHealthScaling"
+    }
+  ]
+}

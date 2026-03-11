@@ -1,0 +1,13 @@
+//2. Dados Gerais da Partida
+//Traz informacoes sobre o jogo em si, como o tempo atual de partida (em segundos), o modo de jogo e o mapa
+
+
+//https://127.0.0.1:2999/liveclientdata/gamestats
+
+{
+  "gameMode": "PRACTICETOOL",
+  "gameTime": 325.54278564453127,
+  "mapName": "Map11",
+  "mapNumber": 11,
+  "mapTerrain": "Default"
+}

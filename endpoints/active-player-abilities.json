@@ -1,0 +1,41 @@
+//5. Dados Especificos do Seu Campeao (Jogador Ativo)
+//Alem do /activeplayer que voce ja usou, voce pode quebrar os dados em partes menores:
+
+//https://127.0.0.1:2999/liveclientdata/activeplayerabilities
+
+{
+  "E": {
+    "abilityLevel": 1,
+    "displayName": "Disparo de Gancho",
+    "id": "CamilleE",
+    "rawDescription": "GeneratedTip_Spell_CamilleE_Description",
+    "rawDisplayName": "GeneratedTip_Spell_CamilleE_DisplayName"
+  },
+  "Passive": {
+    "displayName": "Defesa Adaptativa",
+    "id": "CamillePassive",
+    "rawDescription": "GeneratedTip_Passive_CamillePassive_Description",
+    "rawDisplayName": "GeneratedTip_Passive_CamillePassive_DisplayName"
+  },
+  "Q": {
+    "abilityLevel": 2,
+    "displayName": "Protocolo de Precisão",
+    "id": "CamilleQ",
+    "rawDescription": "GeneratedTip_Spell_CamilleQ_Description",
+    "rawDisplayName": "GeneratedTip_Spell_CamilleQ_DisplayName"
+  },
+  "R": {
+    "abilityLevel": 0,
+    "displayName": "Ultimato Hextec",
+    "id": "CamilleR",
+    "rawDescription": "GeneratedTip_Spell_CamilleR_Description",
+    "rawDisplayName": "GeneratedTip_Spell_CamilleR_DisplayName"
+  },
+  "W": {
+    "abilityLevel": 1,
+    "displayName": "Varredura Tática",
+    "id": "CamilleW",
+    "rawDescription": "GeneratedTip_Spell_CamilleW_Description",
+    "rawDisplayName": "GeneratedTip_Spell_CamilleW_DisplayName"
+  }
+}

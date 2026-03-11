@@ -1,0 +1,7 @@
+//6. Consultar um Jogador Especifico
+//Voce pode buscar informacoes detalhadas de qualquer outro jogador da partida (aliado ou inimigo), passando o nick dele como parametro summonerName. Como voce trabalha com TypeScript/Node, lembre-se de usar encodeURIComponent() no nick caso tenha espacos.
+
+//https://127.0.0.1:2999/liveclientdata/playeritems?summonerName=Riot%20Phreak
+//https://127.0.0.1:2999/liveclientdata/playerscores?summonerName=Riot%20Phreak
+//https://127.0.0.1:2999/liveclientdata/playersummonerspells?summonerName=Riot%20Phreak
+
