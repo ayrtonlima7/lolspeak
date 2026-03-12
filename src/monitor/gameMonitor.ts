@@ -132,7 +132,7 @@ export class GameMonitor {
       return;
     }
 
-    logger.insight(insight);
+    logger.insight(insight, this.stateManager.formatGameTime(insightTime));
     await speak(insight);
   }
 
@@ -159,7 +159,7 @@ export class GameMonitor {
       return;
     }
 
-    logger.insight(`[ANÁLISE PERIÓDICA] ${insight}`);
+    logger.insight(`[ANÁLISE PERIÓDICA] ${insight}`, this.stateManager.formatGameTime(insightTime));
     await speak(insight);
   }
 

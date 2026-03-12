@@ -1,7 +1,13 @@
 import fs from "node:fs";
 import path from "node:path";
 
-const LOG_FILE = path.resolve("jarbas.log");
+const LOGS_DIR = path.resolve("logs");
+const LOG_FILE = path.join(LOGS_DIR, "jarbas.log");
+
+// Garante que a pasta logs/ exista
+if (!fs.existsSync(LOGS_DIR)) {
+  fs.mkdirSync(LOGS_DIR, { recursive: true });
+}
 
 const colors = {
   reset: "\x1b[0m",
@@ -17,8 +23,9 @@ function timestamp(): string {
   return new Date().toLocaleTimeString("pt-BR");
 }
 
-function writeToFile(message: string): void {
-  const line = `[${timestamp()}] ${message}\n`;
+function writeToFile(message: string, gameTime?: string): void {
+  const gt = gameTime ? ` [${gameTime}]` : "";
+  const line = `[${timestamp()}]${gt} ${message}\n`;
   fs.appendFileSync(LOG_FILE, line, "utf-8");
 }
 
@@ -35,11 +42,12 @@ export const logger = {
     console.log(`${colors.red}[${timestamp()}] ✖ ${message}${colors.reset}`);
   },
 
-  insight(message: string): void {
+  insight(message: string, gameTime?: string): void {
+    const gt = gameTime ? ` [${gameTime}]` : "";
     console.log(
-      `\n${colors.magenta}[${timestamp()}] 🧠 JARBAS: ${message}${colors.reset}\n`
+      `\n${colors.magenta}[${timestamp()}]${gt} 🧠 JARBAS: ${message}${colors.reset}\n`
     );
-    writeToFile(`[INSIGHT] ${message}`);
+    writeToFile(`[INSIGHT] ${message}`, gameTime);
   },
 
   debug(message: string): void {

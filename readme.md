@@ -99,7 +99,9 @@ lolspeak/
 ├── .env.example                # Template das variáveis
 ├── package.json
 ├── tsconfig.json
-├── jarbas.log                  # Log dos insights (gerado em runtime)
+├── logs/                       # Logs e relatórios (gerados em runtime)
+│   ├── jarbas.log              # Log dos insights
+│   └── *.md                    # Relatórios de análise pós-partida
 ├── endpoints/                  # JSONs de exemplo dos endpoints da API
 │   ├── all-game-data.json
 │   ├── event-data.json
@@ -172,4 +174,5 @@ O Jarbas irá detectar automaticamente quando uma partida estiver ativa e começ
 - O certificado SSL da API é auto-assinado — o Axios está configurado para aceitar (`rejectUnauthorized: false`)
 - O TTS utiliza `System.Speech` do Windows — funciona apenas em Windows
 - Os insights são gerados em **português brasileiro**
-- O log dos insights é salvo em `jarbas.log` na raiz do projeto
+- O log dos insights é salvo em `logs/jarbas.log`
+- Relatórios de análise pós-partida ficam em `logs/`
