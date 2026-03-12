@@ -25,10 +25,34 @@ export class GameStateManager {
   public previousGold: number = 0;
 
   /**
+   * Reseta todo o estado — chamado quando uma nova partida é detectada.
+   */
+  reset(): void {
+    this.previousSnapshot = null;
+    this.currentSnapshot = null;
+    this.periodicSnapshots = [];
+    this.lastPeriodicAnalysisGameTime = 0;
+    this.lastProcessedEventId = -1;
+    this.previousGold = 0;
+    logger.info("🔄 Nova partida detectada! Estado resetado.");
+  }
+
+  /**
    * Atualiza o estado com novos dados da API.
    * Retorna o snapshot criado.
    */
   update(data: AllGameData): GameSnapshot {
+    // Detectar nova partida: gameTime caiu bruscamente E jogadores em nível baixo
+    if (this.currentSnapshot) {
+      const previousGameTime = this.currentSnapshot.gameTime;
+      const newGameTime = data.gameData.gameTime;
+      const maxPlayerLevel = Math.max(...data.allPlayers.map((p) => p.level));
+
+      if (newGameTime < previousGameTime - 10 && maxPlayerLevel <= 3) {
+        this.reset();
+      }
+    }
+
     this.previousSnapshot = this.currentSnapshot;
 
     const myRiotId = data.activePlayer.riotId;
@@ -126,6 +150,7 @@ export class GameStateManager {
       position: player.position,
       level: player.level,
       isDead: player.isDead,
+      respawnTimer: player.respawnTimer,
       items: [...player.items],
       scores: { ...player.scores },
       runes: player.runes,

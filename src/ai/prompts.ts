@@ -7,16 +7,25 @@ import type { DetectedChange, GameSnapshot } from "../models/types.js";
 export const SYSTEM_PROMPT = `Você é o JARBAS, um assistente tático avançado para League of Legends.
 Você é conciso, direto e estratégico — como um coach profissional.
 
-REGRAS:
+REGRAS DE COMUNICAÇÃO:
 - Responda SEMPRE em português brasileiro.
 - Seja breve: máximo 2-3 frases curtas e objetivas.
-- Foque em ações práticas que o jogador pode tomar AGORA.
-- Considere o contexto do jogo: tempo, itens, KDA, objetivos, composição de time.
-- Use termos de LoL em português quando possível (abate, torre, dragão, barão, etc).
 - NÃO use markdown, emojis, ou formatação especial — o texto será lido em voz alta.
 - NÃO cumprimente o jogador ou faça introduções — vá direto ao ponto.
-- Se houver perigo iminente, avise com urgência.
-- Se houver oportunidade, sugira a ação.`;
+- Use termos de LoL em português quando possível (abate, torre, dragão, barão, etc).
+- NUNCA repita o mesmo conselho duas vezes seguidas. Se a situação não mudou, ofereça uma perspectiva diferente.
+
+REGRAS DE COMPORTAMENTO:
+- Faça SUGESTÕES de possibilidades, NÃO dê ordens ou comandos diretos. Exemplo: em vez de "Vá para o Dragão agora", diga "Pode ser uma boa oportunidade para disputar o Dragão".
+- Apresente opções quando possível: "Dá pra forçar o dragão ou pressionar a torre bot".
+- Se houver perigo iminente, avise com urgência mas sem ser imperativo.
+
+REGRAS DE CONHECIMENTO DO JOGO (PATCH ATUAL 2025+):
+- NO PATCH ATUAL, junglers NÃO precisam mais de leash. A partida começa mais cedo e o jungle faz a rota solo desde o início. NUNCA sugira pedir leash.
+- Fog of war: se um campeão inimigo (especialmente junglers) aparece com nível baixo no início do jogo, pode ser simplesmente porque ele está fora de visão limpando campos. NÃO assuma que está atrasado sem evidências concretas como mortes ou CS muito baixo visível.
+- TIMERS DE OBJETIVOS: Void Grubs nascem aos 5:00. Primeiro Dragão nasce aos 5:00. Arauto da Fenda nasce aos 14:00. Barão Nashor nasce aos 20:00. NUNCA mencione um objetivo antes do seu timer de spawn.
+- RESPAWN TIMER: Quando um campeão está morto, considere o tempo de respawn informado. Se o respawn é menor que 10 segundos, o campeão está prestes a voltar e NÃO é seguro contar com sua ausência para jogadas longas. Mencione isso nas suas sugestões.
+- Considere o contexto do jogo: tempo, itens, KDA, objetivos, composição de time.`;
 
 /**
  * Monta o prompt para insights reativos (gatilho por mudança significativa).
@@ -47,11 +56,17 @@ export function buildReactivePrompt(
   const myCS = myPlayer?.scores.creepScore ?? 0;
 
   const allyTeamInfo = snapshot.allies
-    .map((p) => `  ${p.championName} (${p.position}) Lv${p.level} ${p.isDead ? "MORTO" : "VIVO"} KDA:${p.scores.kills}/${p.scores.deaths}/${p.scores.assists}`)
+    .map((p) => {
+      const status = p.isDead ? `MORTO (respawn: ${Math.ceil(p.respawnTimer)}s)` : "VIVO";
+      return `  ${p.championName} (${p.position}) Lv${p.level} ${status} KDA:${p.scores.kills}/${p.scores.deaths}/${p.scores.assists}`;
+    })
     .join("\n");
 
   const enemyTeamInfo = snapshot.enemies
-    .map((p) => `  ${p.championName} (${p.position}) Lv${p.level} ${p.isDead ? "MORTO" : "VIVO"} KDA:${p.scores.kills}/${p.scores.deaths}/${p.scores.assists} Itens:[${p.items.map((i) => i.displayName).join(", ")}]`)
+    .map((p) => {
+      const status = p.isDead ? `MORTO (respawn: ${Math.ceil(p.respawnTimer)}s)` : "VIVO";
+      return `  ${p.championName} (${p.position}) Lv${p.level} ${status} KDA:${p.scores.kills}/${p.scores.deaths}/${p.scores.assists} Itens:[${p.items.map((i) => i.displayName).join(", ")}]`;
+    })
     .join("\n");
 
   const changesText = changes
@@ -103,7 +118,10 @@ export function buildPeriodicPrompt(snapshots: GameSnapshot[]): string {
     .join("\n");
 
   const latestEnemies = latest.enemies
-    .map((p) => `  ${p.championName} (${p.position}) Lv${p.level} KDA:${p.scores.kills}/${p.scores.deaths}/${p.scores.assists} Itens:[${p.items.map((i) => i.displayName).join(", ")}]`)
+    .map((p) => {
+      const status = p.isDead ? `MORTO (respawn: ${Math.ceil(p.respawnTimer)}s)` : "VIVO";
+      return `  ${p.championName} (${p.position}) Lv${p.level} ${status} KDA:${p.scores.kills}/${p.scores.deaths}/${p.scores.assists} Itens:[${p.items.map((i) => i.displayName).join(", ")}]`;
+    })
     .join("\n");
 
   return `ANÁLISE PERIÓDICA DO JOGO (${gameTime}):

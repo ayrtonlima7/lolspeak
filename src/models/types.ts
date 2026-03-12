@@ -221,6 +221,7 @@ export interface PlayerSnapshot {
   position: Position;
   level: number;
   isDead: boolean;
+  respawnTimer: number;
   items: Item[];
   scores: Scores;
   runes: PlayerRunes;

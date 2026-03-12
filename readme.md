@@ -76,8 +76,8 @@ Eventos importantes: `ChampionKill`, `FirstBlood`, `DragonKill`, `BaronKill`, `H
 ### Mudanças Significativas Detectadas
 
 - **Novos eventos** — Abates, dragões, barões, torres, multikills, first blood
-- **Itens épicos** — Compra de itens com preço ≥ 2600g por qualquer jogador
-- **Mortes** — Quando qualquer campeão morre
+- **Itens significativos** — Compra de itens com preço ≥ 800g por qualquer jogador
+- **Mortes** — Quando qualquer campeão morre (inclui tempo de respawn)
 - **Score** — Mudanças no KDA do jogador ativo
 - **Level up** — Subida de nível do jogador ativo
 - **Gold spike** — Variação de ≥ 500g no ouro do jogador ativo
@@ -90,6 +90,15 @@ A cada 5 minutos de `gameTime`, o sistema salva um snapshot completo em um array
 
 - Os insights **não se sobrepõem** — o polling é pausado durante o processamento da IA e TTS
 - Se um insight demorar para ser gerado e o `gameTime` avançar mais de **30 segundos**, ele é **descartado** para evitar informações desatualizadas
+
+### Regras da IA (System Prompt)
+
+- **Sugestões, não comandos** — Jarbas apresenta possibilidades e opções ao invés de dar ordens diretas
+- **Sem leash** — No patch atual (2025+), junglers não precisam de leash. Jarbas nunca sugere pedir leash
+- **Fog of War** — Jarbas não assume que um jungler inimigo está atrasado só por aparecer com nível baixo no início; pode estar simplesmente fora de visão
+- **Timers de objetivos** — Void Grubs/Dragão: 5:00 | Arauto: 14:00 | Barão: 20:00. Jarbas nunca menciona um objetivo antes do spawn
+- **Respawn Timer** — Quando um campeão está morto, Jarbas considera o `respawnTimer` para saber se dá tempo de agir antes do campeão voltar (< 10s = prestes a renascer)
+- **Sem repetição** — Jarbas evita repetir o mesmo conselho consecutivamente
 
 ## 📁 Estrutura do Projeto
 

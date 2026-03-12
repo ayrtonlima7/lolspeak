@@ -1,8 +1,8 @@
 import type { DetectedChange, GameSnapshot, Item, PlayerSnapshot } from "../models/types.js";
 import type { GameStateManager } from "../state/gameState.js";
 
-/** Preço mínimo para considerar um item como épico/importante */
-const EPIC_ITEM_MIN_PRICE = 2600;
+/** Preço mínimo para considerar um item como significativo */
+const SIGNIFICANT_ITEM_MIN_PRICE = 800;
 
 /** Itens que devem ser ignorados (wards, consumíveis baratos, etc.) */
 const IGNORED_ITEM_IDS = new Set([3340, 3364, 2055, 2031, 2003]);
@@ -141,7 +141,7 @@ function findNewEpicItems(previousItems: Item[], currentItems: Item[]): Item[] {
     (item) =>
       !prevItemIds.has(item.itemID) &&
       !IGNORED_ITEM_IDS.has(item.itemID) &&
-      item.price >= EPIC_ITEM_MIN_PRICE
+      item.price >= SIGNIFICANT_ITEM_MIN_PRICE
   );
 }
 
@@ -158,10 +158,11 @@ function detectDeathChanges(
     if (!prevPlayer) continue;
 
     if (currentPlayer.isDead && !prevPlayer.isDead) {
+      const respawn = Math.ceil(currentPlayer.respawnTimer);
       changes.push({
         type: "DEATH_CHANGE",
-        description: `${currentPlayer.championName} (${currentPlayer.team}) morreu`,
-        details: { player: currentPlayer.championName, team: currentPlayer.team },
+        description: `${currentPlayer.championName} (${currentPlayer.team}) morreu (respawn em ${respawn}s)`,
+        details: { player: currentPlayer.championName, team: currentPlayer.team, respawnTimer: respawn },
       });
     }
   }
